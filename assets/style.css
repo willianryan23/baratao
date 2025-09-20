@@ -16,6 +16,7 @@
 /* cor de fundo da estrutura da página */
 body{
     background: var(--cor-fundo);
+    font-family: var(--fonte-site);
 }
 
 /* cor de fundo do header */
