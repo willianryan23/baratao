@@ -32,12 +32,24 @@ body{
 }
 
 /* animação de quando o link ser clicado o mouser por cima do link de navegação */
-.nav-link:active {
-  color:var(--cor-vermelha);
-  transition: 0.3s ease;
+.logoNav{
+  border: 1px solid var(--cor-vermelha);
+  border-radius: 50%;
 }
 
 /* div do conteudo principal da tela ficar alinhado ao centro com uma margem das laterais */
 .containerMain{
   margin: 85px;
+  
 }
+
+/* estilo do footer */
+.logoFooter{
+  border: 2px solid var(--cor-azul);
+  border-radius: 50%;
+}
+
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+      font-size: 0.85rem;
+  }}
