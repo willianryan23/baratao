@@ -1,8 +1,8 @@
-<header class="headerBackground">
+<header class="headerBackground fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img 
                 src="../assets/img/logo emporio com fundo.jpg" 
                 alt="Logo do grupo Empório" 
@@ -26,12 +26,6 @@
                     <li class="nav-item"><a class="nav-link" href="unidades.php">Unidades</a></li>
                     <li class="nav-item"><a class="nav-link" href="sobre.php">Sobre</a></li>
                 </ul>
-
-                <!-- Campo de busca -->
-                <form class="d-flex mt-2 mt-lg-0">
-                    <input class="form-control me-2" type="search" placeholder="Buscar produtos..." aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
             </div>
         </div>
     </nav>
