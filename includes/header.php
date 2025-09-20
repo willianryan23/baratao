@@ -3,7 +3,11 @@
         <div class="container-fluid">
             <!-- Logo -->
             <a class="navbar-brand" href="#">
-                <img src="../assets/img/logo emporio baratao sem fundo.png" alt="Logo" width="60">
+                <img 
+                src="../assets/img/logo emporio com fundo.jpg" 
+                alt="Logo do grupo Empório" 
+                width="60"
+                class="logoNavbar">
             </a>
 
             <!-- Botão Hamburguer (mobile) -->

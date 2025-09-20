@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <!-- include do head -->
-<?php
-include "../includes/head.php";
+<?php 
+    include "../includes/head.php";
 ?>
 
 <body>
@@ -10,7 +10,8 @@ include "../includes/head.php";
     <?php
     include "../includes/header.php";
     ?>
-    <h1 class="text-center m-2">Ofertas Inperdiveis!</h1>
+    
+    <h1 class="titulo text-center m-2">Ofertas Imperdíveis!</h1>
     <!-- carrosel de promoções -->
     <div id="carouselExampleIndicators" class="carousel slide p-2">
         <div class="carousel-indicators">

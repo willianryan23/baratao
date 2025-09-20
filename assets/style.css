@@ -23,3 +23,15 @@ body{
 .headerBackground{
     background: var(--cor-azul);
 }
+
+/* estilo do titulo de ofertas */
+.titulo{
+    font-weight: 500;
+    
+}
+
+/*estilo da logo da navbar do site*/
+.logoNavbar{
+    border-radius: 50%;
+    border: 1px solid var(--cor-amarela);
+}
