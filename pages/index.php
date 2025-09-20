@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <!-- include do head -->
-<?php 
-    include "../includes/head.php";
+<?php
+include "../includes/head.php";
 ?>
-<body>
-<!-- include do header com a navbar de navegação no site -->
-<?php 
-    include "../includes/header.php";
-?>    
-<h1>teste código</h1>
 
-<!-- script das funcionalidades do boostrap -->
-<?php 
+<body>
+    <!-- include do header com a navbar de navegação no site -->
+    <?php
+    include "../includes/header.php";
+    ?>
+    <!-- carrosel de promoções -->
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- script das funcionalidades do boostrap -->
+    <?php
     include "../includes/scriptBoostrap.php";
-?>
+    ?>
 </body>
+
 </html>
