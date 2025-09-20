@@ -10,7 +10,7 @@ include "../includes/head.php";
     <?php
     include "../includes/header.php";
     ?>
-    <h1 class="text-center m-2">Veja as nossas ofertas </h1>
+    <h1 class="text-center m-2">Ofertas Inperdiveis!</h1>
     <!-- carrosel de promoções -->
     <div id="carouselExampleIndicators" class="carousel slide p-2">
         <div class="carousel-indicators">
@@ -39,40 +39,38 @@ include "../includes/head.php";
         </button>
     </div>
 
-    <!-- container flex para os itens do atacado -->
-    <div class="container border">
-        <!-- container por card de produto -->
-        <div class="container">
-            <div class="row row-cols-2">
-                <?php
-                // Inclui o arquivo de conexão
-                include "../includes/banco.php";
+    <!-- container para os itens do atacado -->
+    <div class="container my-4">
+        <h2 class="text-center mb-4">Produtos em Destaque</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <?php
+            include "../includes/banco.php";
 
-                // Consulta dos produtos
-                $sql = "SELECT titulo, descricao, imagem FROM produtos LIMIT 4";
-                $result = $conn->query($sql);
+            $sql = "SELECT titulo, descricao, imagem FROM produtos LIMIT 4";
+            $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        ?>
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="<?php echo htmlspecialchars($row['imagem']); ?>" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo htmlspecialchars($row['titulo']); ?></h5>
-                                    <p class="card-text"><?php echo htmlspecialchars($row['descricao']); ?></p>
-                                    <a href="#" class="btn btn-primary">Ver mais</a>
-                                </div>
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="<?php echo htmlspecialchars($row['imagem']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['titulo']); ?>">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title"><?php echo htmlspecialchars($row['titulo']); ?></h5>
+                                <p class="card-text text-truncate" title="<?php echo htmlspecialchars($row['descricao']); ?>">
+                                    <?php echo htmlspecialchars($row['descricao']); ?>
+                                </p>
+                                <a href="#" class="btn btn-outline-primary mt-auto">Ver mais</a>
                             </div>
                         </div>
-                        <?php
-                    }
-                } else {
-                    echo "<p>Nenhum produto encontrado.</p>";
+                    </div>
+                    <?php
                 }
-                $conn->close();
-                ?>
-            </div>
+            } else {
+                echo '<div class="col"><div class="alert alert-warning text-center">Nenhum produto encontrado.</div></div>';
+            }
+            $conn->close();
+            ?>
         </div>
     </div>
 
