@@ -13,56 +13,31 @@
   --fonte-site: "Epunda Sans", sans-serif;
 }
 
-/* cor de fundo da estrutura da página */
-body {
-  background: var(--cor-fundo);
-  font-family: var(--fonte-site);
+/* estilo do corpo geral da página */
+body{
+  background-color: var(--cor-amarela);
 }
 
-/* cor de fundo do header */
-.headerBackground {
-  background: var(--cor-azul);
-}
-
-/* estilo do titulo de ofertas */
-.titulo {
-  font-weight: 500;
-}
-
-/*estilo da logo da navbar do site*/
-.logoNavbar {
-  border-radius: 50%;
-  border: 1px solid var(--cor-amarela);
-}
-
-/*estilo do rodapé da página*/
-footer {
-  background-color: var(--cor-fundo);
-  color: var(--cor-azul);
-}
-
-footer a {
-  text-decoration: none;
-  color: var(--cor-azul);
-  transition: 0.3s;
-}
-
-footer a:hover {
-  color: var(--cor-vermelha);
-}
-
-.footer-bottom {
+/* estilo da nav */
+.navColor{
   background-color: var(--cor-azul);
-  color: #fff;
-  padding: 10px 0;
+  filter: opacity(95%);
 }
 
-.social-icons a {
-  margin: 0 10px;
-  font-size: 1.4rem;
-  color: var(--cor-azul);
+/* animação de passar o mouser por cima do link de navegação */
+.nav-link:hover {
+  border-bottom: 1px solid var(--cor-amarela);
+  border-radius: 5px;
+  transition: 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: var(--cor-vermelha);
+/* animação de quando o link ser clicado o mouser por cima do link de navegação */
+.nav-link:active {
+  color:var(--cor-vermelha);
+  transition: 0.3s ease;
+}
+
+/* div do conteudo principal da tela ficar alinhado ao centro com uma margem das laterais */
+.containerMain{
+  margin: 85px;
 }

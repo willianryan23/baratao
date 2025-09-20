@@ -8,11 +8,11 @@
 <body>
     <!-- include do header com a navbar de navegação no site -->
     <?php
-    include "../includes/header.php";
+    include "../includes/navbar.php";
     ?>
-    
-    <!-- inicio do conteiner que separa o conteudo a uma margem da borda -->
-    <div class="container m-5">
+
+    <!-- conteudo principal dessa página -->
+    <div class="containerMain">
 
     <h1 class="titulo text-center m-2">Ofertas Imperdíveis!</h1>
     <!-- carrosel de promoções -->
@@ -48,6 +48,12 @@
         <h2 class="text-center mb-4">Produtos em Destaque</h2>
 
     </div>
+
+    </div>
+    <!-- fim do conteudo principal dessa página -->
+
+
+
     <!-- include do footer -->
     <?php
     include "../includes/footer.php";
