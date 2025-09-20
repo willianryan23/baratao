@@ -51,7 +51,7 @@ include "../includes/head.php";
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    ?>
+            ?>
                     <div class="col">
                         <div class="card h-100 shadow-sm border-0">
                             <img src="<?php echo htmlspecialchars($row['imagem']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['titulo']); ?>">
@@ -64,7 +64,7 @@ include "../includes/head.php";
                             </div>
                         </div>
                     </div>
-                    <?php
+            <?php
                 }
             } else {
                 echo '<div class="col"><div class="alert alert-warning text-center">Nenhum produto encontrado.</div></div>';
@@ -74,6 +74,10 @@ include "../includes/head.php";
         </div>
     </div>
 
+    <!-- include do footer -->
+    <?php
+    include "../includes/footer.php";
+    ?>
     <!-- script das funcionalidades do boostrap -->
     <?php
     include "../includes/scriptBoostrap.php";
