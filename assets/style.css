@@ -33,14 +33,13 @@ body{
 
 /* animação de quando o link ser clicado o mouser por cima do link de navegação */
 .logoNav{
-  border: 1px solid var(--cor-vermelha);
+  border: 2px solid var(--cor-vermelha);
   border-radius: 50%;
 }
 
 /* div do conteudo principal da tela ficar alinhado ao centro com uma margem das laterais */
 .containerMain{
   margin: 85px;
-  
 }
 
 /* estilo do footer */
@@ -48,8 +47,4 @@ body{
   border: 2px solid var(--cor-azul);
   border-radius: 50%;
 }
-
-@media (max-width: 576px) {
-    .navbar-nav .nav-link {
-      font-size: 0.85rem;
-  }}
+/* torna a navbar responsiva para quando os dispositivos forem menores */
