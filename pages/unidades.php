@@ -6,7 +6,7 @@
 <body>
 <!-- inicio da navbar -->
     <?php 
-        include "../includes/header.php"
+        include "../includes/navbar.php"
     ?>
 <!-- inicio da navbar -->
 
