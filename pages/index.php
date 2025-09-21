@@ -12,7 +12,7 @@
     ?>
 
     <!-- conteudo principal dessa página -->
-    <div class="containerMain">
+    <main class="containerMain">
 
     <h1 class="titulo text-center m-2">Ofertas Imperdíveis!</h1>
     <!-- carrosel de promoções -->
@@ -49,7 +49,7 @@
 
     </div>
 
-    </div>
+</main>
     <!-- fim do conteudo principal dessa página -->
 
 
