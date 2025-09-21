@@ -40,7 +40,8 @@ body {
    CONTEÚDO PRINCIPAL
 ========================= */
 .containerMain {
-
+  margin: 15px;
+  background-color: yellow;
 }
 
 /* =========================
@@ -59,7 +60,7 @@ body {
   max-height: 480px;
   overflow-y: auto;
   padding: 0.5rem;
-}
+} 
 
 
 /* =========================
