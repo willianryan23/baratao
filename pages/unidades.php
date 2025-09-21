@@ -17,7 +17,7 @@ include "../includes/head.php";
             <h2 class="text-center">Veja as lojas mais próximas de você</h2>
             <div class="row g-3">
                 <!-- Mapa Google -->
-                <div class="col-12 col-sm-6 border rounded mapaGoogle">
+                <div class="col-12 col-sm-8 border rounded mapaGoogle">
                     <br>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7932.469789887651!2d-42.691086091308584!3d-6.232735075884415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1758411436307!5m2!1spt-BR!2sbr"
                         width="100%"
