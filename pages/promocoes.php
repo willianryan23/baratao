@@ -8,7 +8,7 @@
     <?php 
         include "../includes/navbar.php"
     ?>
-<!-- inicio da navbar -->
+<!-- fim da navbar -->
 
 <!-- footer da página -->
 <?php 
