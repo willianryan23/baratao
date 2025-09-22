@@ -15,8 +15,9 @@
     <main class="containerMain">
 
     <h1 class="titulo text-center m-2">Ofertas Imperdíveis!</h1>
+
     <!-- carrosel de promoções -->
-    <div id="carouselExampleIndicators" class="carousel slide">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-slide="carousel" data-bs-interval="10">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -30,7 +31,7 @@
                 <img src="../assets//img/2.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+                <img src="../assets/img/1.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
