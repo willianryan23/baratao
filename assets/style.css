@@ -64,6 +64,15 @@ body {
   padding: 0.5rem;
 }
 
+/* ===============================
+   TRANSPARENCIA DO BOTÃO CARROSEL
+================================== */
+
+.carousel-control-prev button{
+  opacity: 0; /*deixa os botões transparentes*/
+  cursor: auto; /*mantém o cursor de clique*/
+}
+
 /* =========================
    RESPONSIVIDADE
 ========================= */
