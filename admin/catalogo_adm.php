@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 include "../includes/banco.php";
 
 $sql = "SELECT * FROM produtos";
@@ -7,7 +8,7 @@ $result = mysqli_query($conn, $sql);
 while($linha = $result->fetch_assoc()) {
 
 $id = $linha["id"];
-$imagem =
+
 echo "<div class='col-md-4'>
           <div class='card mb-3'>
             <img src='$imagem' class='card-img-top' alt='$nome' style='width: 300px;  height: 275px; object-fit: cover; margin: auto;'>
