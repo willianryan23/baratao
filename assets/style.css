@@ -56,6 +56,7 @@ body {
 
 .footerContainer{
   background: var(--cor-azul);
+  height: 100px;
 }
 
 /* =========================
@@ -66,6 +67,11 @@ body {
   max-height: 480px;
   overflow-y: auto;
   padding: 0.5rem;
+}
+
+/* deixa a tela dos mapas preeenchendo 100% da tela */
+.locUnidades{
+  height: 100vh;
 }
 
 /* ===============================
