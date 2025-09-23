@@ -54,6 +54,10 @@ body {
   border-radius: 50%;
 }
 
+.footerContainer{
+  background: var(--cor-azul);
+}
+
 /* =========================
    LOJAS / MAPA E CARDS
 ========================= */
@@ -62,6 +66,15 @@ body {
   max-height: 480px;
   overflow-y: auto;
   padding: 0.5rem;
+}
+
+/* ===============================
+   TRANSPARENCIA DO BOTÃO CARROSEL
+================================== */
+
+.carousel-control-prev button{
+  opacity: 0; /*deixa os botões transparentes*/
+  cursor: auto; /*mantém o cursor de clique*/
 }
 
 /* =========================

@@ -13,7 +13,7 @@ include "../includes/head.php";
 
     <main class="containerMain">
         <!-- container da tela com o maps e as lojas -->
-        <div class="container">
+        <div class="container ">
             <h2 class="text-center">Veja as lojas mais próximas de você</h2>
             <div class="row g-3">
                 <!-- Mapa Google -->
