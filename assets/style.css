@@ -54,6 +54,10 @@ body {
   border-radius: 50%;
 }
 
+.footerContainer{
+  background: var(--cor-azul);
+}
+
 /* =========================
    LOJAS / MAPA E CARDS
 ========================= */
