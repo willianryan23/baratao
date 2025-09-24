@@ -3,7 +3,7 @@
 ========================= */
 :root {
   --cor-fundo: #f2f2f2;
-  --cor-azul: #064073;
+  --cor-azul: #114279;
   --cor-vermelha: #d91a3d;
   --cor-amarela: #f2b84b;
   --cor-laranja: #d97f30;
@@ -24,7 +24,7 @@ body {
 ========================= */
 .navColor {
   background-color: var(--cor-azul);
-  filter: opacity(95%);
+ 
 }
 .nav-link:hover {
   border-bottom: 1px solid var(--cor-amarela);
@@ -44,6 +44,16 @@ body {
   margin: 100px auto 30px auto; /* topo, direita, baixo, esquerda */
   max-width: 1200px; /* largura máxima do conteúdo */
   padding: 0 15px; /* respiro lateral */
+}
+
+/* =========================
+   CARD DOS PRINCIPALIS ITENS ATACADO
+========================= */
+
+.cardItemAtacado{
+  width: 100%;
+  height: 200px;
+  background: #114279;
 }
 
 /* =========================
