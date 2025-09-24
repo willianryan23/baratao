@@ -20,6 +20,22 @@ body {
 }
 
 /* =========================
+   NAVBARADMIN
+========================= */
+#navColorAdm {
+  background-color: var(--cor-vermelha);
+ 
+}
+.nav-link:hover {
+  border-bottom: 1px solid var(--cor-amarela);
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+.logoNav {
+  border: 2px solid var(--cor-vermelha);
+  border-radius: 50%;
+}
+/* =========================
    NAVBAR
 ========================= */
 .navColor {

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navColor">
+<nav class="navbar navbar-expand-lg navColor id="NavColorAdm">
   <div class="container">
     <!-- Logo -->
     <a class="navbar-brand" href="../pages/index.php">
@@ -14,10 +14,10 @@
     <!-- Links -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav text-center">
-        <li class="nav-item"><a class="nav-link text-light" href="cadastro_adm.php">cadastro</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="catalogo_adm.php">Catálogo</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="promocoes_adm.php">promoções</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="unidades_adm.php">Unidades</a></li>
+        <big><li class="nav-item"><a class="nav-link text-light" href="cadastro_adm.php">Cadastro</a></li></big>
+        <big><li class="nav-item"><a class="nav-link text-light" href="catalogo_adm.php">Catálogo</a></li></big>
+        <big><li class="nav-item"><a class="nav-link text-light" href="promocoes_adm.php">Promoções</a></li></big>
+        <big><li class="nav-item"><a class="nav-link text-light" href="unidades_adm.php">Unidades</a></li></big>
       </ul>
     </div>
   </div>

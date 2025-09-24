@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-    include "../includes/head.php"
-?>
-
+    <?php 
+        include "../includes/head.php"
+    ?>
 <body>
-    <?php
-    //processa o envio de imagens do formulario
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $_POST['nome_equipamento']);
-    $imagem = $_FILES['imagem']['name'];
-    $caminho = "uploads/" . $imagem;
+<?php
+include "../includes/banco.php"; // conexão com o banco
+include "navbar_adm.php";        // navbar admin
 
-    // Cria a pasta uploads se não existir
-    @mkdir("uploads");
+// Upload de imagens
 
-    // Move o arquivo e insere no banco
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['imagem'])) {
+    $nome = $_POST['nome'] ?? '';
+    $imagem = $_FILES['imagem']['name'] ?? '';
+    $caminho = "../assets/uploads/" . basename($imagem);
+
+    // Move o arquivo
     if (move_uploaded_file($_FILES['imagem']['tmp_name'], $caminho)) {
-        $conexao->query("INSERT INTO equipamentos (nome_equipamento, imagem) VALUES ('$nome_equipamento', '$caminho')");
-        header("Location: index.php");
-        exit();
+        // Usando instrução preparada para evitar SQL Injection
+        $stmt = $conn->prepare("INSERT INTO produtos (nome, imagem) VALUES (?, ?)");
+        $stmt->bind_param("ss", $nome, $caminho);
+        $stmt->execute();
+        $stmt->close();
     } else {
         echo "Erro ao fazer upload da imagem.";
     }
 }
 
-    // Adiciona produto se o formulário for enviado
-    if (isset($_POST['adicionar'])) { // Verifica se o formulário de adicionar foi enviado
-        $nome = $_POST['nome']; // Pega o preço do produto do formulário
-        $descricao = $_POST['descricao']; // Pega a descrição do produto do formulário
+// =======================
+// Inserir produto
+// =======================
+if (isset($_POST['adicionar'])) {
+    $nome = $_POST['nome'] ?? '';
+    $descricao = $_POST['descricao'] ?? '';
 
-        $sql_insert = "INSERT INTO produtos (nomw, descricao) VALUES ('$nome', '$descricao')"; // Monta o comando SQL para inserir o produto
-        $conexao->query($sql_insert); // Executa o comando SQL no banco de dados
-    } 
-    include "../includes/banco.php";
-    include "navbar_adm.php"; // Importa o arquivo que faz a conexão com o banco de dados
-    ?>
+    // Usando instrução preparada
+    $stmt = $conn->prepare("INSERT INTO produtos (nome, descricao) VALUES (?, ?)");
+    $stmt->bind_param("ss", $nome, $descricao);
+    $stmt->execute();
+    $stmt->close();
+}
+?>
+<main class="containerMain">
+
 
     <!-- Formulário para adicionar produto -->
    <form action='' method='post' enctype='multipart/form-data'>
@@ -52,8 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for='descricao'>Descrição:</label><br>
             <input type='text' name='descricao' id='descricao' required><br>
         </div>
-        <input type='submit' value='Adicionar'>
+        <input type='submit' name='adicionar' value='Adicionar'>
     </form>
+    
 <?php 
     include "../includes/scriptBoostrap.php";
     include "../includes/footer.php";
