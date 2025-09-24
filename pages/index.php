@@ -47,9 +47,16 @@ include "../includes/head.php";
         </div>
 
         <!-- container para os itens do atacado -->
-        <div class="container my-4">
-            <h2 class="text-center mb-4">Produtos em Destaque</h2>
 
+     <div class="container my-4 cardItemAtacado">
+        <p>vamos</p>
+     </div>
+
+        <div class="container my-4 ">
+            <h2 class="text-center mb-4">Produtos em Destaque</h2>
+            <div class="container card-body bg-danger">
+                <h1>teste</h1>
+            </div>
         </div>
 
     </main>
