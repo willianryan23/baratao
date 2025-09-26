@@ -1,6 +1,13 @@
 /* =========================
-   VARIÁVEIS GLOBAIS
+   ZERANDO CSS PADÃO DO NAVEGADOR
 ========================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 :root {
   --cor-fundo: #f2f2f2;
   --cor-azul: #114279;
@@ -75,14 +82,9 @@ body {
 /* =========================
    FOOTER
 ========================= */
-.logoFooter {
-  border: 2px solid var(--cor-azul);
-  border-radius: 50%;
-}
-
-.footerContainer{
-  background: var(--cor-azul);
-  height: 100px;
+/* estilo dos icones do rodapé para redes sociais*/
+.redeLink{
+  font-size: 25px;
 }
 
 /* =========================
