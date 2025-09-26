@@ -10,6 +10,16 @@
     ?>
 <!-- inicio da navbar -->
 
+<!-- div do conteudo principal da página -->
+<main class="containerMain">
+    <!-- container de pesquisa por  categoria -->
+    <div class="container-fluid">
+        
+    </div>
+
+</main>
+
+
 <!-- footer da página -->
 <?php 
     include "../includes/footer.php"

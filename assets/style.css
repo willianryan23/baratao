@@ -99,7 +99,7 @@ body {
 
 /* deixa a tela dos mapas preeenchendo 100% da tela */
 .locUnidades{
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* ===============================
@@ -129,6 +129,14 @@ body {
   .col-custom-cards {
     flex: 0 0 33.3333%; /* 4 colunas */
     max-width: 33.3333%;
+  }
+}
+
+/* Para telas pequenas (até 768px) */
+@media (max-width: 768px) {
+  .locUnidades .col-sm-4 {
+    max-height: none !important;
+    overflow: visible !important;
   }
 }
 

@@ -27,7 +27,7 @@ include "../includes/head.php";
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-                </div>
+                </div> 
 
                 <!-- Cards laterais com imagens das unidades próximas de você -->
                 <div class="col-12 col-sm-4 border rounded" style="max-height: 480px; overflow-y: auto; padding: 0.5rem;">
