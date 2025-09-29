@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <?php 
         include "../includes/head.php"
     ?>
@@ -62,6 +62,7 @@ if (isset($_POST['adicionar'])) {
         <input type='submit' name='adicionar' value='Adicionar'>
     </form>
     
+</main>
 <?php 
     include "../includes/scriptBoostrap.php";
     include "../includes/footer.php";
