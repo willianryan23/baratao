@@ -18,6 +18,44 @@ $produtos = [
         "preco_unit" => 2.20,
         "preco_caixa" => 22.00,
         "img" => "https://via.placeholder.com/300x200?text=Detergente"
+    ],
+
+    [
+        "nome" => "Coca-Cola Lata 350ml",
+        "preco_unit" => 3.50,
+        "preco_caixa" => 40.00,
+        "img" => "https://via.placeholder.com/300x200?text=Coca-Cola"
+    ],
+    [
+        "nome" => "Arroz 5kg",
+        "preco_unit" => 25.00,
+        "preco_caixa" => 240.00,
+        "img" => "https://via.placeholder.com/300x200?text=Arroz"
+    ],
+    [
+        "nome" => "Detergente 500ml",
+        "preco_unit" => 2.20,
+        "preco_caixa" => 22.00,
+        "img" => "https://via.placeholder.com/300x200?text=Detergente"
+    ],
+
+    [
+        "nome" => "Coca-Cola Lata 350ml",
+        "preco_unit" => 3.50,
+        "preco_caixa" => 40.00,
+        "img" => "https://via.placeholder.com/300x200?text=Coca-Cola"
+    ],
+    [
+        "nome" => "Arroz 5kg",
+        "preco_unit" => 25.00,
+        "preco_caixa" => 240.00,
+        "img" => "https://via.placeholder.com/300x200?text=Arroz"
+    ],
+    [
+        "nome" => "Detergente 500ml",
+        "preco_unit" => 2.20,
+        "preco_caixa" => 22.00,
+        "img" => "https://via.placeholder.com/300x200?text=Detergente"
     ]
 ];
 ?>
@@ -77,19 +115,8 @@ include "../includes/head.php"
 
 
 
-        <div class='card mb-3'>
-            <img src='$imagem' class='card-img-top' alt='$nome' style='width: 300px;  height: 275px; object-fit: cover; margin: auto;'>
-            <div class='card-body'>
-                <h5 class='card-title'>$nome</h5>
-                <p class='card-text'>Descrição: $descricao</p>
-                <div class='d-flex justify-content-between'>
-                    <div>
-                        <a href='#' class='btn btn-editar'>Editar</a>
-                    </div>
-                </div>
-            </div>
+        
         </div>
-        </div>;
 
     </main>
 
