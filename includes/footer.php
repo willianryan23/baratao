@@ -33,7 +33,7 @@
 
     </div>
     <div class="text-center py-3 border-top border-secondary mt-3">
-      © 2025 Empório Atacadão. Todos os direitos reservados.
+      © 2025 Grupo Empório. Todos os direitos reservados.
     </div>
   </div>
 </footer>

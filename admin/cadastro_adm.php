@@ -4,6 +4,8 @@
         include "../includes/head.php"
     ?>
 <body>
+
+
 <?php
 include "../includes/banco.php"; // conexão com o banco
 include "navbar_adm.php";        // navbar admin

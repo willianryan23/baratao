@@ -13,88 +13,81 @@ include "../includes/head.php"
 
     <!-- conteudo principal da pagina -->
     <main class="containerMain">
-        <section class="py-5 d-flex justify-content-center">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-md-6">
-                        <h2>Quem Somos</h2>
-                        <p>Somos uma empresa com atuação diversificada, oferecendo soluções que abrangem vários segmentos de mercado, proporcionando crescimento e inovação para nossos clientes e parceiros.</p>
-                        <p>Desde nossa fundação, temos como objetivo unir expertise e tecnologia para entregar valor em diferentes áreas estratégicas, fortalecendo nosso posicionamento como líderes multissetoriais.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="../assets/img/logo emporio baratao sem fundo.png" alt="Equipe da empresa" class="team-photo" />
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Nossa História -->
+        <section>
+      <h2 class="section-title">Nossa História</h2>
+      <p>Bem-vindo(a) ao Grupo Empório. Mais do que um nome, somos um legado. Mais do que uma empresa, somos uma família que nasceu da paixão, da dedicação e de um sonho ardente de fazer a diferença.</p>
+      <p>Nossa história começou a ser escrita em <strong>13 de março de 1995</strong>, não em grandes centros, mas no coração de <strong>Corrente-PI</strong>. Ali, em um pequeno armarinho que também coloria a vida com brinquedos, plantávamos a primeira semente do que se tornaria o Grupo Empório.</p>
+      <p>Em 2001, o desejo de expandir horizontes nos levou a <strong>Teresina</strong>, mantendo a alegria dos armarinhos e brinquedos, mas sempre com o olhar atento ao futuro.</p>
+      <p>A vida nos reserva reviravoltas, e em 2004, abraçamos uma nova paixão: o varejo, transformando nosso negócio em um minimercado para estar ainda mais perto das necessidades das pessoas.</p>
+      <p>Dois anos depois, em 2006, uma série de desafios nos fez tomar uma decisão de coração: retornar à nossa casa de origem, à querida <strong>Regeneração-PI</strong>, a cidade do padroeiro São Gonçalo. Essa mudança, motivada pela busca por segurança e pelo reencontro com nossas raízes, fortaleceu ainda mais nosso propósito e nossa conexão com a comunidade.</p>
+      <p>A cada passo, crescíamos e nos reinventávamos. Em 2015, um novo capítulo se abriu com a mudança da marca de "Comercial Baratão" para o que conhecemos hoje: <strong>Empório Baratão</strong>, um nome que já carregava a promessa de variedade e valor.</p>
+      <p>Os anos de trabalho árduo e a visão de futuro nos guiaram para a expansão. Em 2022, iniciamos um processo audacioso, inaugurando o conceito de lojas compactas, próximas à clientela, com o <strong>Mini Empório Baratão</strong>. No ano seguinte, em 2023, a família cresceu com o <strong>Mini Empório Baratão II</strong>. E em 2024, mergulhamos no segmento de atacado com o <strong>Empório Atacadista</strong>, provando que a paixão por servir não tem limites.</p>
+    </section>
 
-        <section class="bg-light py-5">
-            <div class="container">
-                <h2 class="mb-4 text-center">Nossos Valores e Missão</h2>
-                <div class="row text-center g-4">
-                    <div class="col-md-4">
-                        <div class="p-4 border rounded" style="height: 220px;">
-                            <h4>Missão</h4>
-                            <p>Oferecer soluções integradas com qualidade e inovação, promovendo o desenvolvimento sustentável dos negócios de nossos clientes.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="p-4 border rounded" style="height: 220px;">
-                            <h4>Visão</h4>
-                            <p>Ser referência nacional em atuação multissetorial, impulsionando a transformação digital e a excelência em serviços.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="p-4 border rounded" style="height: 220px;">
-                            <h4>Valores</h4>
-                            <ul class="list-unstyled">
-                                <li>• Ética e Transparência</li>
-                                <li>• Inovação Contínua</li>
-                                <li>• Sustentabilidade</li>
-                                <li>• Comprometimento</li>
-                                <li>• Valorização das Pessoas</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <section class="mt-5">
+      <h2 class="section-title">Nossas Áreas de Atuação</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-primary h-100">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Empório Pharma</h5>
+              <p class="card-text">Cuidando da sua saúde.</p>
             </div>
-        </section>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-success h-100">
+            <div class="card-body">
+              <h5 class="card-title text-success">Empório Construção</h5>
+              <p class="card-text">Construindo seus sonhos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-warning h-100">
+            <div class="card-body">
+              <h5 class="card-title text-warning">Empório Gás</h5>
+              <p class="card-text">Levando energia ao seu lar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-info h-100">
+            <div class="card-body">
+              <h5 class="card-title text-info">Empório Solar</h5>
+              <p class="card-text">Iluminando o futuro com sustentabilidade.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-dark h-100">
+            <div class="card-body">
+              <h5 class="card-title text-dark">Empório Servtrans</h5>
+              <p class="card-text">Conectando caminhos com soluções.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-secondary h-100">
+            <div class="card-body">
+              <h5 class="card-title text-secondary">Empório Licita</h5>
+              <p class="card-text">Abrindo portas para novas oportunidades.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-5">Segmentos de Atuação</h2>
-                <div class="row g-4 text-center">
-                    <div class="col-md-3">
-                        <div class="p-4 border rounded">
-                            <div class="segment-icon mb-3">🏭</div>
-                            <h5>Indústria</h5>
-                            <p>Soluções para processos produtivos e automação industrial, com foco em eficiência e qualidade.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="p-4 border rounded">
-                            <div class="segment-icon mb-3">💼</div>
-                            <h5>Serviços Corporativos</h5>
-                            <p>Consultoria, gestão e tecnologia para aprimorar a gestão e operação das empresas.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="p-4 border rounded">
-                            <div class="segment-icon mb-3">🌿</div>
-                            <h5>Meio Ambiente</h5>
-                            <p>Projetos sustentáveis e soluções ambientais para preservação e responsabilidade social.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="p-4 border rounded">
-                            <div class="segment-icon mb-3">💻</div>
-                            <h5>Tecnologia</h5>
-                            <p>Desenvolvimento de sistemas, inovação digital e suporte tecnológico personalizado.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="mt-5">
+      <h2 class="section-title">Nossa Essência</h2>
+      <p>No Grupo Empório, não vendemos apenas produtos ou oferecemos serviços. Nós cultivamos experiências. Construímos pontes. Despertamos sorrisos.</p>
+      <p>Nosso compromisso vai além do transacional; ele reside na promessa de entregar o melhor de nós, em cada detalhe, para que você sinta a alma e o carinho em tudo o que fazemos.</p>
+      <p>Somos feitos de gente para gente. De histórias que se entrelaçam. De valores inegociáveis que nos guiam: integridade, inovação, e um profundo respeito por cada pessoa que cruza o nosso caminho.</p>
+      <p>Acreditamos que a verdadeira riqueza está nas relações que construímos, na confiança que inspiramos e na felicidade que geramos.</p>
+      <p>Quando você escolhe o Grupo Empório, você não está apenas escolhendo uma marca; você está abraçando uma jornada conosco. Uma jornada de excelência, de calor humano e de um propósito maior, forjada em quase três décadas de dedicação e amor.</p>
+      <p><em>Venha fazer parte da nossa história. Sinta a emoção que nos move. Juntos, vamos construir um futuro onde cada detalhe importa e cada encontro é uma celebração.</em></p>
+    </section>
     </main>
 
     <!-- footer da página -->

@@ -1,134 +1,66 @@
 <?php
-// Exemplo de produtos (poderia vir do banco de dados)
-$produtos = [
-    [
-        "nome" => "Coca-Cola Lata 350ml",
-        "preco_unit" => 3.50,
-        "preco_caixa" => 40.00,
-        "img" => "https://via.placeholder.com/300x200?text=Coca-Cola"
-    ],
-    [
-        "nome" => "Arroz 5kg",
-        "preco_unit" => 25.00,
-        "preco_caixa" => 240.00,
-        "img" => "https://via.placeholder.com/300x200?text=Arroz"
-    ],
-    [
-        "nome" => "Detergente 500ml",
-        "preco_unit" => 2.20,
-        "preco_caixa" => 22.00,
-        "img" => "https://via.placeholder.com/300x200?text=Detergente"
-    ],
+// Conexão com o banco
 
-    [
-        "nome" => "Coca-Cola Lata 350ml",
-        "preco_unit" => 3.50,
-        "preco_caixa" => 40.00,
-        "img" => "https://via.placeholder.com/300x200?text=Coca-Cola"
-    ],
-    [
-        "nome" => "Arroz 5kg",
-        "preco_unit" => 25.00,
-        "preco_caixa" => 240.00,
-        "img" => "https://via.placeholder.com/300x200?text=Arroz"
-    ],
-    [
-        "nome" => "Detergente 500ml",
-        "preco_unit" => 2.20,
-        "preco_caixa" => 22.00,
-        "img" => "https://via.placeholder.com/300x200?text=Detergente"
-    ],
 
-    [
-        "nome" => "Coca-Cola Lata 350ml",
-        "preco_unit" => 3.50,
-        "preco_caixa" => 40.00,
-        "img" => "https://via.placeholder.com/300x200?text=Coca-Cola"
-    ],
-    [
-        "nome" => "Arroz 5kg",
-        "preco_unit" => 25.00,
-        "preco_caixa" => 240.00,
-        "img" => "https://via.placeholder.com/300x200?text=Arroz"
-    ],
-    [
-        "nome" => "Detergente 500ml",
-        "preco_unit" => 2.20,
-        "preco_caixa" => 22.00,
-        "img" => "https://via.placeholder.com/300x200?text=Detergente"
-    ]
-];
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php
-include "../includes/head.php"
-?>
+<?php include "../includes/head.php"; ?>
 
-<body>
-    <!-- inicio da navbar -->
-    <?php
-    include "../includes/navbar.php"
-    ?>
-    <!-- inicio da navbar -->
+<body class="bg-secondary">
 
-    <!-- div do conteudo principal da página -->
-    <main class="containerMain">
+    <!-- Navbar -->
+    <?php include "../includes/navbar.php"; ?>
 
-        <div class="container mt-4">
-            <div class="row">
-                <?php foreach ($produtos as $p): ?>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm">
-                            <img src="<?= $p['img']; ?>" class="card-img-top" alt="<?= $p['nome']; ?>">
-                            <div class="card-body">
-                                <h5 class="card-title"><?= $p['nome']; ?></h5>
-                                <p class="card-text">
-                                    <strong>Preço Unitário:</strong> R$ <?= number_format($p['preco_unit'], 2, ',', '.'); ?><br>
-                                    <strong>Preço Caixa:</strong> R$ <?= number_format($p['preco_caixa'], 2, ',', '.'); ?>
-                                </p>
-                                <a href="#" class="btn btn-success w-100">Adicionar ao Orçamento</a>
+    <main class="containerMain py-4">
+        <div class="container">
+            <h1 class="text-center text-white mb-4">Catálogo de Produtos</h1>
+
+            <div class="row justify-content-center">
+                <?php
+                include "../includes/banco.php";
+
+                // Consulta ao banco de dados
+                $sql = "SELECT * FROM produtos ORDER BY nome";
+                $result = $conn->query($sql);
+
+                // Verifica se há resultados
+                if ($result && $result->num_rows > 0) {
+                    while ($linha = $result->fetch_assoc()) {
+                        $id = $linha['id'];
+                        $nome = htmlspecialchars($linha['nome']);
+                        $descricao = htmlspecialchars($linha['descricao']);
+                        $imagem = !empty($linha['imagem']) ? $linha['imagem'] : 'assets/uploads/default.jpg';
+
+                        echo "
+                        <div class='col-md-4 mb-4'>
+                            <div class='card bg-dark text-white shadow h-100'>
+                                <img src='$imagem' class='card-img-top' alt='$nome'>
+                                <div class='card-body d-flex flex-column'>
+                                    <h5 class='card-title'>$nome</h5>
+                                    <p class='card-text'>$descricao</p>
+                                    <a href='#' class='btn btn-success mt-auto'>Ver produto</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                        ";
+                    }
+                } else {
+                    echo "<p class='text-center text-light'>Nenhum produto encontrado.</p>";
+                }
+                ?>
             </div>
         </div>
-
-
-
-
-        <div class="container">
-
-            <div class="row">
-
-
-
-            </div>
-
-        </div>
-
-
-
-
-
-        
-        </div>
-
     </main>
 
+    <!-- Rodapé -->
+    <?php include "../includes/footer.php"; ?>
 
-    <!-- footer da página -->
-    <?php
-    include "../includes/footer.php"
-    ?>
-    <!-- script de funcionalidades do boostrap -->
-    <?php
-    include "../includes/scriptBoostrap.php"
-    ?>
+    <!-- Scripts Bootstrap -->
+    <?php include "../includes/scriptBoostrap.php"; ?>
+
 </body>
 
 </html>

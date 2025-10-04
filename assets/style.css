@@ -83,7 +83,7 @@ body {
    FOOTER
 ========================= */
 /* estilo dos icones do rodapé para redes sociais*/
-.redeLink{
+.redeLink p{
   font-size: 25px;
 }
 
@@ -97,10 +97,6 @@ body {
   padding: 0.5rem;
 }
 
-/* deixa a tela dos mapas preeenchendo 100% da tela */
-.locUnidades{
-  min-height: 100vh;
-}
 
 /* ===============================
    TRANSPARENCIA DO BOTÃO CARROSEL
