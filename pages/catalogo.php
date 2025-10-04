@@ -1,31 +1,46 @@
 <?php
 // Conexão com o banco
+include "../includes/banco.php";
 
+// Verifica se foi feita uma busca
+$busca = "";
+if (isset($_POST['produto']) && !empty(trim($_POST['produto']))) {
+    $busca = trim($_POST['produto']);
+    // Prepara a query com filtro
+    $sql = "SELECT * FROM produtos 
+            WHERE nome LIKE '%$busca%' 
+            OR descricao LIKE '%$busca%' 
+            ORDER BY nome";
+} else {
+    // Se não houver busca, mostra todos
+    $sql = "SELECT * FROM produtos ORDER BY nome";
+}
 
-
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php include "../includes/head.php"; ?>
 
-<body class="bg-secondary">
-
-    <!-- Navbar -->
+<body>
     <?php include "../includes/navbar.php"; ?>
 
     <main class="containerMain py-4">
         <div class="container">
-            <h1 class="text-center text-white mb-4">Catálogo de Produtos</h1>
+            <h1 class="text-center mb-4">Catálogo de Produtos</h1>
+
+            <!-- formulário de pesquisa -->
+            <form method="post">
+                <div class="container d-flex mb-4 gap-2">
+                    <input type="text" class="form-control" name="produto" placeholder="Buscar Produto..." 
+                        value="<?= htmlspecialchars($busca) ?>">
+                    <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+                </div>
+            </form>
 
             <div class="row justify-content-center">
                 <?php
-                include "../includes/banco.php";
-
-                // Consulta ao banco de dados
-                $sql = "SELECT * FROM produtos ORDER BY nome";
-                $result = $conn->query($sql);
-
                 // Verifica se há resultados
                 if ($result && $result->num_rows > 0) {
                     while ($linha = $result->fetch_assoc()) {
@@ -36,7 +51,7 @@
 
                         echo "
                         <div class='col-md-4 mb-4'>
-                            <div class='card bg-dark text-white shadow h-100'>
+                            <div class='card cartao bg-dark text-white shadow h-100'>
                                 <img src='$imagem' class='card-img-top' alt='$nome'>
                                 <div class='card-body d-flex flex-column'>
                                     <h5 class='card-title'>$nome</h5>
@@ -55,12 +70,7 @@
         </div>
     </main>
 
-    <!-- Rodapé -->
     <?php include "../includes/footer.php"; ?>
-
-    <!-- Scripts Bootstrap -->
     <?php include "../includes/scriptBoostrap.php"; ?>
-
 </body>
-
 </html>
