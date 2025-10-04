@@ -117,7 +117,6 @@ include "../includes/head.php";
                Nosso compromisso é com a sua satisfação.</p>
             <a href="sobre.php" class="btn btn-outline-primary">Saiba Mais</a>
         </section>
-
     </main>
     <!-- fim do conteudo principal dessa página -->
 

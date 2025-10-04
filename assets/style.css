@@ -61,7 +61,7 @@ body {
 ========================= */
 
 .containerMain {
-  margin: 100px auto 30px auto; /* topo, direita, baixo, esquerda */
+  margin: 70px auto 30px auto; /* topo, direita, baixo, esquerda */
   max-width: 1200px; /* largura máxima do conteúdo */
   padding: 0 15px; /* respiro lateral */
 }
