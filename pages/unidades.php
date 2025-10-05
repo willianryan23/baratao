@@ -27,7 +27,7 @@ include "../includes/head.php";
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-                </div> 
+                </div>
 
                 <!-- Cards laterais com imagens das unidades próximas de você -->
                 <div class="col-12 col-sm-4 border rounded" style="max-height: 480px; overflow-y: auto; padding: 0.5rem;">
@@ -40,7 +40,47 @@ include "../includes/head.php";
                                 style="width: 80px; height: 80px; object-fit:cover;">
                             <div class="ms-3 flex-grow-1">
                                 <h5 class="card-title mb-2">Empório Atacadista</h5>
-                                <a href="#" class="btn btn-primary w-100 linkNavegacao" target="_blank">Ir até essa Loja</a>
+                                <!-- =================================
+                                MODAL DE INFORMAÇÃO DE CADA UNIDADE
+                                =====================================-->
+                                <!-- botão que dispara o Modal -->
+                                <button type="button" class="btn btn-primary w-100 linkNavegacao" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Informações Desta Loja
+                                </button>
+                                <!-- Scrollable modal -->
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Empório Atacadista</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <!-- imagem da lojá correspondente -->
+                                                    <img src="" class="d-block w-100" alt="Imagem da Loja">
+                                                    <p><strong>Endereço:</strong> Endereço - Piauí</p>
+                                                    <p><strong>Telefone:</strong> (00) 00000-0000</p>
+                                                    <p><strong>Horário de Funcionamento:</strong><br>
+                                                        Segunda a Sábado: 8h às 18h<br>
+                                                        Domingo: 8h às 12h
+                                                    </p>
+                                                    <p><strong>Serviços:</strong></p>
+                                                    <ul>
+                                                        <li>Venda no atacado e varejo</li>
+                                                        <li>Entrega para comércios</li>
+                                                        <li>Programa de fidelidade</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                                    <a href="https://maps.app.goo.gl/zGFPnYsKArqqoQnh8" target="_blank" class="btn btn-primary"><i class="fa-solid fa-location-dot"></i>  Ir Até a Loja</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -136,4 +176,5 @@ include "../includes/head.php";
     include "../includes/scriptBoostrap.php";
     ?>
 </body>
+
 </html>
