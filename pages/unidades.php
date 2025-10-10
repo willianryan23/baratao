@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<?php include "../includes/head.php"; ?>
-<body>
-<?php include "../includes/navbar.php"; ?>
+<?php
+include"../includes/header.php";
+include "../includes/navbar.php";
+?>
 
 <main class="containerMain">
     <div class="container locUnidades">
@@ -68,6 +67,4 @@
 </main>
 
 <?php include "../includes/footer.php"; ?>
-<?php include "../includes/scriptBoostrap.php"; ?>
-</body>
-</html>
+
