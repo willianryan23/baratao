@@ -1,6 +1,7 @@
 <?php
 include"../includes/header.php";
 include "../includes/navbar.php";
+include "../includes/banco.php";
 ?>
 
 <main class="containerMain">
@@ -17,7 +18,7 @@ include "../includes/navbar.php";
             <!-- Lista de lojas -->
             <div class="col-12 col-sm-4 border rounded" style="max-height:480px; overflow-y:auto; padding:0.5rem;">
                 <?php
-                include "../includes/banco.php";
+                
                 $result = $conn->query("SELECT * FROM unidades ORDER BY id DESC");
                 while ($loja = $result->fetch_assoc()):
                     $img = 'data:image/jpeg;base64,' . base64_encode($loja['imagem']);
