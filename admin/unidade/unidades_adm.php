@@ -20,13 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Erro: " . $conn->error;
     }
 }
-?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<?php include "../includes/head.php"; ?>
-<body>
-<?php include "navbar_adm.php"; ?>
+include "../includes/header.php";
+include "navbar_adm.php";
+?>
 
 <div class="container mt-4">
     <h2>Gerenciar Unidades</h2>

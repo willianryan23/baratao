@@ -37,3 +37,6 @@
     </div>
   </div>
 </footer>
+<?php include "scriptBootstrap.php"; ?>
+</body>
+</html>
