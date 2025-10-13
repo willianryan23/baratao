@@ -8,7 +8,7 @@ include "../includes/head.php";
 <body>
     <!-- include do header com a navbar de navegação no site -->
     <?php
-    include "../includes/navbar.php";
+    include "../includes/newnavbar.php";
     ?>
 
     <!-- conteudo principal dessa página -->
