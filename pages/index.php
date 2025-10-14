@@ -111,5 +111,5 @@ include ("../includes/newnavbar.php");
     </section>
 </main>
 
-<?php include "../includes/script.js"; ?>
+<?php include "../includes/script.php"; ?>
 <?php include "../includes/footer.php"; ?>
