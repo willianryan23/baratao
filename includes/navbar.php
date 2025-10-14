@@ -14,7 +14,7 @@
     <!-- Links principais -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav text-center">
-        <li class="nav-item"><a class="nav-link text-light" href="index.php">Início</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="../pages/index.php">Início</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="catalogo.php">Catálogo</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="promocoes.php">Promoções</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="unidades.php">Unidades</a></li>

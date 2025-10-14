@@ -45,7 +45,9 @@ body {
 ========================= */
 nav {
   background-color: var(--cor-azul); /* azul escuro */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
   z-index: 1100;
 }
 
@@ -73,7 +75,7 @@ ul.menu {
   list-style: none;
   display: flex;
   align-items: center;
-  z-index: 1200;;
+  z-index: 1200;
 }
 
 ul.menu li {
@@ -107,7 +109,7 @@ ul.submenu {
   background-color: var(--cor-azul);
   min-width: 180px;
   border-radius: 0 0 5px 5px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
 
@@ -148,7 +150,7 @@ ul.menu li:focus-within > ul.submenu {
   transition: 0.3s;
 }
 
-.listaMenu li{
+.listaMenu{
   list-style: none;
 }
 
@@ -168,7 +170,7 @@ ul.menu li:focus-within > ul.submenu {
     flex-direction: column;
     padding-top: 20px;
     transition: left 0.3s ease;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     z-index: 1300;
   }
 
