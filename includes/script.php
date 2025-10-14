@@ -19,7 +19,7 @@ menuToggle.addEventListener('keydown', (e) => {
 // Abrir submenu mobile ao clicar na categoria pai
 submenuParents.forEach(parent => {
   parent.addEventListener('click', (e) => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 768) /*768*/ {
       e.preventDefault();
       parent.classList.toggle('open');
     }

@@ -1,7 +1,6 @@
 <?php
 include "../includes/header.php";
-//include "../includes/navbar.php";
-include ("../includes/newnavbar.php");
+include "../includes/navbar.php";
 ?>
 
 <main class="containerMain">
