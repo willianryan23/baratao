@@ -22,7 +22,7 @@
       <!-- Coluna de contato -->
       <div class="col-md-4 mb-3">
         <h5>Fale Conosco</h5>
-        <p>Email: contato@emporio.com</p>
+        <p>Email: <span id="emailCopy">emporioatacadista@emporiobaratao.com.br</span></p>
         <p>Telefone: (00) 00000-0000</p>
         <div>
           <a href="#" class="text-white me-3 redeLink"><i class="fa-brands fa-facebook"></i></a>
