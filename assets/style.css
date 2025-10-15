@@ -316,3 +316,10 @@ ul.menu li:focus-within > ul.submenu {
     height: 300px;
   }
 }
+
+
+.bloco{
+  background-color: red;
+  width: 100vw;
+  height: 100vh;
+}

@@ -1,6 +1,6 @@
 <nav>
     <div class="nav-container">
-      <a href="index.php" class="logo"><img width="130px" src="../assets/img/Logo Grupo Empório.png" alt="Logo do grupo empório"></a>
+      <a href="index.php" class="logo"><img width="130px" src="/baratao/assets/img/Logo Grupo Empório.png" alt="Logo do grupo empório"></a>
       <div class="menu-toggle" aria-label="Abrir menu" tabindex="0">
         <span></span>
         <span></span>
@@ -8,6 +8,7 @@
       </div>
       <ul class="menu" role="menubar">
         <li role="none"><a class="linkNavegacao" href="/baratao/index.php" role="menuitem" tabindex="0">Início</a></li>
+        <li role="none"><a class="linkNavegacao" href="/../baratao/pages/catalogo.php" role="menuitem" tabindex="0">Produtos</a></li>
         <li role="none"><a class="linkNavegacao" href="/../baratao/pages/promocoes.php" role="menuitem" tabindex="0">Promoções</a></li>
         <li role="none"><a class="linkNavegacao" href="/baratao/pages/unidades.php" role="menuitem" tabindex="0">Retire na Loja</a></li>
         <!-- lista de itens por categoria -->

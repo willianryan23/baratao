@@ -1,5 +1,5 @@
 <?php
-include"../includes/header.php";
+include "../includes/header.php";
 include "../includes/navbar.php";
 include "../includes/banco.php";
 ?>
@@ -10,7 +10,8 @@ include "../includes/banco.php";
         <div class="row g-3">
             <!-- Mapa -->
             <div class="col-12 col-sm-8 border rounded">
-                <iframe src="https://www.google.com/maps/embed?pb=..."
+                <!-- link original do maps do iframe (https://www.google.com/maps/embed?pb=...)  -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.137149080189!2d-42.687020361694984!3d-6.227520932056076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x785285f064313e9%3A0x125031625c3e9a7e!2zRW1ww7NyaW8gQmFyYXTDo28!5e0!3m2!1sen!2sbr!4v1760550904939!5m2!1sen!2sbr"
                         width="100%" height="450"
                         style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>

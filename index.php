@@ -3,12 +3,33 @@ include "includes/header.php";
 include "includes/navbar.php";
 ?>
 
+<!-- HERO PRINCIPAL -->
+<section class="hero-section text-white text-center d-flex align-items-center justify-content-center">
+    <!-- seção do carrosel de imagens de promoções do dia -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/baratao/assets/img/Empório Banner/1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/baratao/assets/img/Empório Banner/2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/baratao/assets/img/Empório Banner/3.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
 <main class="containerMain">
 
-    <!-- HERO PRINCIPAL -->
-    <section class="hero-section text-white text-center d-flex align-items-center justify-content-center">
-        
-    </section>
 
     <!-- CATEGORIAS -->
     <section class="container my-5">
@@ -27,10 +48,10 @@ include "includes/navbar.php";
             foreach ($categorias as $c) {
                 echo '
                 <div class="card mx-2 flex-shrink-0" style="width: 180px;">
-                    <img src="'.$c["img"].'" class="card-img-top" alt="'.$c["nome"].'">
+                    <img src="' . $c["img"] . '" class="card-img-top" alt="' . $c["nome"] . '">
                     <div class="card-body text-center">
-                        <h6 class="card-title">'.$c["nome"].'</h6>
-                        <a href="catalogo.php?categoria='.urlencode($c["nome"]).'" class="btn btn-outline-primary btn-sm">Ver</a>
+                        <h6 class="card-title">' . $c["nome"] . '</h6>
+                        <a href="catalogo.php?categoria=' . urlencode($c["nome"]) . '" class="btn btn-outline-primary btn-sm">Ver</a>
                     </div>
                 </div>';
             }
@@ -53,10 +74,10 @@ include "includes/navbar.php";
                 echo '
                 <div class="col-6 col-md-3">
                     <div class="card shadow-sm h-100">
-                        <img src="'.$o["img"].'" class="card-img-top" alt="'.$o["nome"].'">
+                        <img src="' . $o["img"] . '" class="card-img-top" alt="' . $o["nome"] . '">
                         <div class="card-body text-center">
-                            <h6 class="card-title">'.$o["nome"].'</h6>
-                            <p class="fw-bold text-danger">'.$o["preco"].'</p>
+                            <h6 class="card-title">' . $o["nome"] . '</h6>
+                            <p class="fw-bold text-danger">' . $o["preco"] . '</p>
                             <a href="catalogo.php" class="btn btn-sm btn-danger">Aproveitar</a>
                         </div>
                     </div>
@@ -81,10 +102,10 @@ include "includes/navbar.php";
                 echo '
                 <div class="col-6 col-md-3">
                     <div class="card shadow-sm h-100 border-0">
-                        <img src="'.$p["img"].'" class="card-img-top" alt="'.$p["nome"].'">
+                        <img src="' . $p["img"] . '" class="card-img-top" alt="' . $p["nome"] . '">
                         <div class="card-body text-center">
-                            <h6 class="card-title">'.$p["nome"].'</h6>
-                            <p class="fw-bold">'.$p["preco"].'</p>
+                            <h6 class="card-title">' . $p["nome"] . '</h6>
+                            <p class="fw-bold">' . $p["preco"] . '</p>
                             <a href="catalogo.php" class="btn btn-primary btn-sm">Comprar</a>
                         </div>
                     </div>

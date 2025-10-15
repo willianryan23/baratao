@@ -16,8 +16,8 @@ if (isset($_POST['produto']) && !empty(trim($_POST['produto']))) {
 
 $result = $conn->query($sql);
  
-include "../includes/head.php";
-include "../includes/navbar.php";
+include __DIR__ . "/../includes/header.php";
+include __DIR__ . "/../includes/navbar.php";
 ?>
 
 <main class="containerMain py-4">
@@ -73,5 +73,5 @@ include "../includes/navbar.php";
     </div>
 </main>
 
-<?php include "../includes/footer.php"; ?>
+<?php include __DIR__ . "/../includes/footer.php"; ?>
 
