@@ -1,7 +1,7 @@
 /* icones do bootstrap */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 /* font do google */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 /* =========================
    ZERANDO CSS PADÃO DO NAVEGADOR
@@ -77,7 +77,7 @@ nav {
 }
 
 /* estilo de fonte da navegação */
-.linkNavegacao{
+.linkNavegacao {
   font-weight: 600;
 }
 
@@ -162,7 +162,7 @@ ul.menu li:focus-within > ul.submenu {
   transition: 0.3s;
 }
 
-.listaMenu{
+.listaMenu {
   list-style: none;
 }
 
@@ -253,6 +253,15 @@ ul.menu li:focus-within > ul.submenu {
   font-size: 25px;
 }
 
+/* estilo dos icones */
+i {
+  transition: 0.3s ease;
+}
+i:hover {
+  color: var(--cor-amarela);
+  font-size: 18px;
+}
+
 /* =========================
    LOJAS / MAPA E CARDS
 ========================= */
@@ -280,6 +289,21 @@ ul.menu li:focus-within > ul.submenu {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+/* ===================================
+  PAGINA DE PROMOÇÕES
+======================================*/
+.promo-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.promo-img {
+  height: 280px;
+  object-fit: cover;
 }
 
 /* =========================
@@ -317,8 +341,7 @@ ul.menu li:focus-within > ul.submenu {
   }
 }
 
-
-.bloco{
+.bloco {
   background-color: red;
   width: 100vw;
   height: 100vh;

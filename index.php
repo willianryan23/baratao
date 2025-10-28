@@ -4,7 +4,7 @@ include "includes/navbar.php";
 ?>
 
 <!-- HERO PRINCIPAL -->
-<section class="hero-section text-white text-center d-flex align-items-center justify-content-center">
+<section class="hero-section text-white text-center d-flex align-items-center justify-content-center m-3">
     <!-- seção do carrosel de imagens de promoções do dia -->
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
         <div class="carousel-inner">
@@ -143,7 +143,7 @@ include "includes/navbar.php";
     <section class="container text-center my-5">
         <h2>Sobre Nós</h2>
         <p class="lead">Somos o <strong>Mercado Econômico</strong>, um supermercado que oferece variedade, economia e confiança há mais de 10 anos. Nosso compromisso é proporcionar a melhor experiência de compra para nossos clientes, com produtos de qualidade e atendimento diferenciado.</p>
-        <a href="sobre.php" class="btn btn-outline-primary">Saiba Mais</a>
+        <a href="/baratao/pages/sobre.php" class="btn btn-outline-primary">Saiba Mais</a>
     </section>
 </main>
 
