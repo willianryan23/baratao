@@ -1,105 +1,130 @@
 <?php
 // =============================================
-// Página de Cadastro de Promoções - ADM
+// Painel Administrativo - Cadastrar Promoções
 // =============================================
-
-// Título da página
-$titulo = "Gerenciar Promoções - Sistema de Vendas";
-
-// Includes principais
 include '../includes/header_adm.php';
 include '../includes/banco.php';
+include '../includes/navbar.php';
 
-// Verifica se o formulário foi enviado
+$mensagem = "";
+
+// Caminho da pasta de destino das imagens
+$pasta_destino = "../uploads/promocoes/";
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data_inicio = $_POST['data_inicio'];
     $data_fim = $_POST['data_fim'];
 
-    // Diretório de destino
-    $diretorio = "../uploads/promocoes/";
+    if (isset($_FILES['cartaz']) && $_FILES['cartaz']['error'] === UPLOAD_ERR_OK) {
+        $extensao = strtolower(pathinfo($_FILES['cartaz']['name'], PATHINFO_EXTENSION));
+        $permitidos = ['jpg', 'jpeg', 'png', 'webp'];
 
-    // Cria o diretório se não existir
-    if (!is_dir($diretorio)) {
-        mkdir($diretorio, 0777, true);
-    }
+        if (in_array($extensao, $permitidos)) {
+            // Cria nome único para o arquivo
+            $novo_nome = uniqid('promo_', true) . '.' . $extensao;
+            $caminho_arquivo = $pasta_destino . $novo_nome;
 
-    // Verifica se o arquivo foi enviado
-    if (isset($_FILES['cartaz']) && $_FILES['cartaz']['error'] == 0) {
-        $extensao = pathinfo($_FILES['cartaz']['name'], PATHINFO_EXTENSION);
-        $extensao = strtolower($extensao);
-
-        // Extensões permitidas
-        $permitidas = ['jpg', 'jpeg', 'png', 'webp'];
-        if (!in_array($extensao, $permitidas)) {
-            $erro = "Extensão inválida. Envie um arquivo JPG, PNG ou WEBP.";
-        } else {
-            // Gera nome único para o arquivo
-            $nomeArquivo = "promo_" . uniqid() . "." . $extensao;
-            $caminho = $diretorio . $nomeArquivo;
-
-            // Move o arquivo para a pasta de destino
-            if (move_uploaded_file($_FILES['cartaz']['tmp_name'], $caminho)) {
-                // Insere no banco apenas o nome do arquivo
-                $query = "INSERT INTO promocoes (cartaz, data_inicio, data_fim)
-                          VALUES (?, ?, ?)";
+            // Move o arquivo para a pasta uploads/promocoes
+            if (move_uploaded_file($_FILES['cartaz']['tmp_name'], $caminho_arquivo)) {
+                // Salva o caminho e as datas no banco
+                $query = "INSERT INTO promocoes (cartaz, data_inicio, data_fim) VALUES (?, ?, ?)";
                 $stmt = mysqli_prepare($conn, $query);
-                mysqli_stmt_bind_param($stmt, "sss", $nomeArquivo, $data_inicio, $data_fim);
+                mysqli_stmt_bind_param($stmt, "sss", $caminho_arquivo, $data_inicio, $data_fim);
 
                 if (mysqli_stmt_execute($stmt)) {
-                    $sucesso = "Promoção cadastrada com sucesso!";
+                    $mensagem = "<div class='alert alert-success'>Promoção cadastrada com sucesso!</div>";
                 } else {
-                    $erro = "Erro ao salvar no banco.";
+                    $mensagem = "<div class='alert alert-danger'>Erro ao salvar no banco.</div>";
                 }
             } else {
-                $erro = "Falha ao mover o arquivo.";
+                $mensagem = "<div class='alert alert-danger'>Erro ao mover o arquivo.</div>";
             }
+        } else {
+            $mensagem = "<div class='alert alert-warning'>Formato inválido. Use apenas JPG, PNG ou WEBP.</div>";
         }
     } else {
-        $erro = "Nenhum arquivo enviado.";
+        $mensagem = "<div class='alert alert-danger'>Envie um cartaz válido.</div>";
     }
 }
 ?>
 
-
-
 <div class="container my-5">
-    <h1 class="text-center text-primary mb-4">
-        <i class="fas fa-bullhorn me-2"></i>Nova Promoção
-    </h1>
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body">
+            <h2 class="text-center text-primary fw-bold mb-4">
+                <i class="fas fa-upload me-2"></i>Cadastro de Promoção
+            </h2>
 
-    <?php if (!empty($erro)): ?>
-        <div class="alert alert-danger text-center"><?php echo $erro; ?></div>
-    <?php elseif (!empty($sucesso)): ?>
-        <div class="alert alert-success text-center"><?php echo $sucesso; ?></div>
-    <?php endif; ?>
+            <?= $mensagem ?>
 
-    <form method="POST" enctype="multipart/form-data" class="card shadow p-4 mx-auto" style="max-width: 600px;">
-        <div class="mb-3">
-            <label class="form-label fw-bold">Cartaz da Promoção</label>
-            <input type="file" name="cartaz" class="form-control" required>
-            <small class="text-muted">
-                Extensões permitidas: JPG, PNG, WEBP.  
-                Proporção ideal: **1080x1080 px**.
-            </small>
+            <form method="POST" enctype="multipart/form-data">
+                <div class="mb-4">
+                    <label for="cartaz" class="form-label fw-semibold">Cartaz da Promoção</label>
+                    <input type="file" class="form-control" id="cartaz" name="cartaz" required>
+                    <div class="form-text">
+                        Extensões permitidas: <strong>JPG, PNG, WEBP</strong> — Proporção ideal:
+                        <strong>16:9 (ex: 1280×720 px)</strong> para melhor exibição.
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="data_inicio" class="form-label fw-semibold">Data de Início</label>
+                        <input type="date" class="form-control" id="data_inicio" name="data_inicio" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="data_fim" class="form-label fw-semibold">Data de Fim</label>
+                        <input type="date" class="form-control" id="data_fim" name="data_fim" required>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success px-4 fw-bold">
+                        <i class="fas fa-check-circle me-1"></i>Salvar Promoção
+                    </button>
+                </div>
+            </form>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label class="form-label fw-bold">Data de Início</label>
-                <input type="date" name="data_inicio" class="form-control" required>
-            </div>
-            <div class="col-md-6 mb-3">
-                <label class="form-label fw-bold">Data de Fim</label>
-                <input type="date" name="data_fim" class="form-control" required>
-            </div>
+    <div class="mt-5">
+        <h4 class="fw-bold text-secondary mb-3">
+            <i class="fas fa-images me-2"></i>Promoções Cadastradas
+        </h4>
+        <div class="row g-3">
+            <?php
+            $promos = mysqli_query($conn, "SELECT * FROM promocoes ORDER BY id DESC");
+            if (mysqli_num_rows($promos) > 0) {
+                while ($promo = mysqli_fetch_assoc($promos)) {
+                    echo "
+                    <div class='col-md-4'>
+                        <div class='card border-0 shadow-sm rounded-3'>
+                            <img src='{$promo['cartaz']}' class='card-img-top rounded-top-3' alt='Cartaz da Promoção'>
+                            <div class='card-body text-center'>
+                                <small class='text-muted'>
+                                    Válida de " . date('d/m/Y', strtotime($promo['data_inicio'])) . "
+                                    até " . date('d/m/Y', strtotime($promo['data_fim'])) . "
+                                </small>
+                            </div>
+                        </div>
+                    </div>";
+                }
+            } else {
+                echo "<div class='alert alert-light text-center'>Nenhuma promoção cadastrada ainda.</div>";
+            }
+            ?>
         </div>
-
-        <div class="text-center">
-            <button type="submit" class="btn btn-success px-4">
-                <i class="fas fa-save me-1"></i> Salvar Promoção
-            </button>
-        </div>
-    </form>
+    </div>
 </div>
 
-<?php include '../includes/scriptBootstrap.php'; ?>
+<style>
+.card img {
+    height: 220px;
+    object-fit: cover;
+}
+</style>
+
+<?php
+include '../includes/footer.php';
+include '../includes/scriptBootstrap.php';
+?>

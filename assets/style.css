@@ -50,7 +50,7 @@ body {
    NAVBAR
 ========================= */
 nav {
-  background-color: var(--cor-azul); /* azul escuro */
+  background-color: var(--cor-amarela); /* azul escuro */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -254,12 +254,18 @@ ul.menu li:focus-within > ul.submenu {
 }
 
 /* estilo dos icones */
-i {
+.icon {
   transition: 0.3s ease;
+  color: var(--cor-azul);
 }
-i:hover {
-  color: var(--cor-amarela);
+.icon:hover {
+  color: var(--cor-vermelha);
   font-size: 18px;
+}
+
+/* cor dos textos do rodapé */
+.textoCor{
+  color: var(--cor-azul);
 }
 
 /* =========================
@@ -347,7 +353,6 @@ i:hover {
 }
 
 .bloco {
-  background-color: red;
   width: 100vw;
   height: 100vh;
 }

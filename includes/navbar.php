@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-warning shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light  shadow-sm">
   <div class="container">
     <!-- Logo -->
     <a class="navbar-brand" href="../index.php">
@@ -36,7 +36,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link fw-bold text-dark" href="/baratao/pages/unidades.php">Retire na Loja</a>
+          <a class="nav-link fw-bold text-dark" href="/../baratao/pages/unidade.php">Retire na Loja</a>
         </li>
 
         <!-- Dropdown "Mais Informações" -->
@@ -46,17 +46,17 @@
           </a>
           <ul class="dropdown-menu shadow" aria-labelledby="maisInfoDropdown">
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="/baratao/pages/trabalho_conosco.php">
                 <i class="fa-solid fa-address-card me-2"></i> Trabalhe Conosco
               </a>
             </li>
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="/baratao/pages/fornecedores.php">
                 <i class="bi bi-archive-fill me-2"></i> Seja nosso Fornecedor
               </a>
             </li>
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="../pages/sobre.php">
+              <a class="dropdown-item d-flex align-items-center" href="/baratao/pages/sobre.php">
                 <i class="fa-solid fa-book me-2"></i> Quem Somos
               </a>
             </li>
