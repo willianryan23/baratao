@@ -306,6 +306,11 @@ i:hover {
   object-fit: cover;
 }
 
+/* cor do titulo de promoções  */
+.textoPromocao{
+  color: var(--cor-azul);
+
+}
 /* =========================
    RESPONSIVIDADE
 ========================= */

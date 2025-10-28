@@ -1,7 +1,5 @@
 <?php
-// =============================================
-// Página de Promoções - Estilo Mercado Livre
-// =============================================
+
 
 // Define o título da página
 $titulo = "Promoções - Sistema de Vendas";
@@ -26,7 +24,7 @@ $resultado = mysqli_query($conn, $query);
 
 <div class="container my-5">
     <div class="text-center mb-5">
-        <h1 class="fw-bold text-primary">
+        <h1 class="fw-bold textoPromocao">
             <i class="fas fa-tags me-2"></i>Promoções Ativas
         </h1>
         <p class="text-muted">Aproveite as ofertas válidas até o fim do período!</p>
@@ -38,13 +36,13 @@ $resultado = mysqli_query($conn, $query);
                 <div class="col-md-4 col-sm-6">
                     <div class="card shadow-sm border-0 rounded-4 h-100 promo-card">
                         <!-- Exibe o cartaz armazenado no banco -->
-                        <img src="data:image/jpeg;base64,<?php echo base64_encode($promo['cartaz']); ?>" 
-                             class="card-img-top rounded-top-4 promo-img" alt="Cartaz da promoção">
-                        
+                        <img src="data:image/jpeg;base64,<?php echo base64_encode($promo['cartaz']); ?>"
+                            class="card-img-top rounded-top-4 promo-img" alt="Cartaz da promoção">
+
                         <div class="card-body text-center">
                             <h6 class="text-success fw-bold mb-2">
                                 <i class="fas fa-clock me-1"></i>
-                                Válida de <?php echo date('d/m/Y', strtotime($promo['data_inicio'])); ?> 
+                                Válida de <?php echo date('d/m/Y', strtotime($promo['data_inicio'])); ?>
                                 até <?php echo date('d/m/Y', strtotime($promo['data_fim'])); ?>
                             </h6>
                             <button class="btn btn-warning text-dark fw-bold mt-2">
@@ -63,11 +61,7 @@ $resultado = mysqli_query($conn, $query);
     <?php endif; ?>
 </div>
 
-<?php 
-    include '../includes/footer.php';
-    include '../includes/scriptBootstrap.php';
-
+<?php
+include '../includes/footer.php';
+include '../includes/scriptBootstrap.php';
 ?>
-
-</body>
-</html>

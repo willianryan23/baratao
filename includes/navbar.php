@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-warning shadow-sm">
   <div class="container">
     <!-- Logo -->
-    <a class="navbar-brand" href="index.php">
+    <a class="navbar-brand" href="../index.php">
       <img src="/baratao/assets/img/Logo Grupo Empório.png" alt="Logo do Grupo Empório" width="130" />
     </a>
 
