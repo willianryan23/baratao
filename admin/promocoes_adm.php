@@ -4,7 +4,7 @@
 // =============================================
 include '../includes/header_adm.php';
 include '../includes/banco.php';
-include '../includes/navbar.php';
+include '../admin/navbar_adm.php';
 
 $mensagem = "";
 
@@ -20,13 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $permitidos = ['jpg', 'jpeg', 'png', 'webp'];
 
         if (in_array($extensao, $permitidos)) {
-            // Cria nome único para o arquivo
             $novo_nome = uniqid('promo_', true) . '.' . $extensao;
             $caminho_arquivo = $pasta_destino . $novo_nome;
 
-            // Move o arquivo para a pasta uploads/promocoes
             if (move_uploaded_file($_FILES['cartaz']['tmp_name'], $caminho_arquivo)) {
-                // Salva o caminho e as datas no banco
                 $query = "INSERT INTO promocoes (cartaz, data_inicio, data_fim) VALUES (?, ?, ?)";
                 $stmt = mysqli_prepare($conn, $query);
                 mysqli_stmt_bind_param($stmt, "sss", $caminho_arquivo, $data_inicio, $data_fim);
@@ -105,6 +102,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     Válida de " . date('d/m/Y', strtotime($promo['data_inicio'])) . "
                                     até " . date('d/m/Y', strtotime($promo['data_fim'])) . "
                                 </small>
+                                <div class='mt-2'>
+                                    <a href='editar_promocao.php?id={$promo['id']}' class='btn btn-primary btn-sm me-2'>
+                                        <i class='fas fa-edit'></i> Editar
+                                    </a>
+                                    <a href='deletar_promocao.php?id={$promo['id']}' class='btn btn-danger btn-sm' 
+                                        onclick=\"return confirm('Tem certeza que deseja deletar esta promoção?');\">
+                                        <i class='fas fa-trash'></i> Deletar
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>";

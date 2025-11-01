@@ -1,6 +1,4 @@
 <?php
-
-
 // Define o título da página
 $titulo = "Promoções - Sistema de Vendas";
 
@@ -12,15 +10,14 @@ include '../includes/banco.php';
 $hoje = date('Y-m-d');
 
 // Consulta promoções ativas (entre data_inicio e data_fim)
-$query = "SELECT * FROM promocoes 
-          WHERE data_inicio <= '$hoje' 
-          AND data_fim >= '$hoje'
-          ORDER BY data_inicio DESC";
+$query = "SELECT * FROM promocoes WHERE data_inicio <= ? AND data_fim >= ? ORDER BY data_inicio DESC";
+$stmt = mysqli_prepare($conn, $query);
+mysqli_stmt_bind_param($stmt, "ss", $hoje, $hoje);
+mysqli_stmt_execute($stmt);
+$resultado = mysqli_stmt_get_result($stmt);
 
-$resultado = mysqli_query($conn, $query);
+include '../includes/navbar.php';
 ?>
-
-<?php include '../includes/navbar.php'; ?>
 
 <div class="container my-5">
     <div class="text-center mb-5">
@@ -29,29 +26,26 @@ $resultado = mysqli_query($conn, $query);
         </h1>
         <p class="text-muted">Aproveite as ofertas válidas até o fim do período!</p>
     </div>
-
-    <?php if (mysqli_num_rows($resultado) > 0): ?>
+    <?php if ($resultado && mysqli_num_rows($resultado) > 0): ?>
         <div class="row g-4">
-            <?php while ($promo = mysqli_fetch_assoc($resultado)): ?>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card shadow-sm border-0 rounded-4 h-100 promo-card">
-                        <!-- Exibe o cartaz armazenado no banco -->
-                        <img src="data:image/jpeg;base64,<?php echo base64_encode($promo['cartaz']); ?>"
-                            class="card-img-top rounded-top-4 promo-img" alt="Cartaz da promoção">
-
-                        <div class="card-body text-center">
-                            <h6 class="text-success fw-bold mb-2">
-                                <i class="fas fa-clock me-1"></i>
-                                Válida de <?php echo date('d/m/Y', strtotime($promo['data_inicio'])); ?>
-                                até <?php echo date('d/m/Y', strtotime($promo['data_fim'])); ?>
-                            </h6>
-                            <button class="btn btn-warning text-dark fw-bold mt-2">
-                                <i class="fas fa-shopping-cart me-1"></i> Ver ofertas
-                            </button>
-                        </div>
+        <?php while ($promo = mysqli_fetch_assoc($resultado)): ?>
+            <div class="col-md-4 col-sm-6">
+                <div class="card shadow-sm border-0 rounded-4 h-100 promo-card">
+                    <img src="<?php echo $promo['cartaz']; ?>"
+                        class="card-img-top rounded-top-4 promo-img" alt="Cartaz da promoção">
+                    <div class="card-body text-center">
+                        <h6 class="text-success fw-bold mb-2">
+                            <i class="fas fa-clock me-1"></i>
+                            Válida de <?php echo date('d/m/Y', strtotime($promo['data_inicio'])); ?>
+                            até <?php echo date('d/m/Y', strtotime($promo['data_fim'])); ?>
+                        </h6>
+                        <button class="btn btn-warning text-dark fw-bold mt-2">
+                            <i class="fas fa-shopping-cart me-1"></i> Ver ofertas
+                        </button>
                     </div>
                 </div>
-            <?php endwhile; ?>
+            </div>
+        <?php endwhile; ?>
         </div>
     <?php else: ?>
         <div class="alert alert-light text-center">
